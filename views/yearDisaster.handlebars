@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>ConnectedEcos | News</title>
+  <style>
+    body {
+      font-family: oxanium;
+      background: linear-gradient(180deg, #000000 0%, #252525 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .bg-img {
+      min-height: 500px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      animation: slideUp 1s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(100%);
+        /* Start off-screen */
+        opacity: 0;
+        /* Start invisible */
+      }
+
+      to {
+        transform: translateY(0);
+        /* End at original position */
+        opacity: 1;
+        /* Fully visible */
+      }
+    }
+
+    .bg-img a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    /* Position the navbar container inside the image */
+    .container {
+      /* position: absolute; */
+      margin: 20px;
+      width: auto;
+
+    }
+
+    /* The navbar */
+    .topnav {
+      overflow: hidden;
+      float: right;
+    }
+
+    /* Navbar links */
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+      border-radius: 5px;
+    }
+
+    #logo {
+      float: left;
+    }
+
+    body {
+      font-family: oxanium;
+      margin: 0;
+      padding: 0;
+
+      color: white;
+    }
+
+    .dtcontainer {
+      background-color: rgb(28, 28, 28, 0.7);
+      border: 1px solid #ffffff;
+      padding: 10px;
+      width: 550px;
+      margin: 50px auto;
+      text-align: center;
+      border-radius: 0% 0% 15% 15%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      gap: 0px;
+    }
+
+    .dtcontainer h1 {
+      font-size: 24px;
+      margin: 0;
+      padding-bottom: 10px;
+      opacity: 100%;
+    }
+
+    .dtcontainer .highlight {
+      font-size: 36px;
+      color: #48CFFB;
+      opacity: 100%;
+    }
+
+    .dtcontainer p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ccc;
+      padding: 10px 0;
+      opacity: 100%;
+    }
+
+    .dtcontainer .button {
+      background-color: #666;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 14px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      opacity: 100%;
+    }
+
+    .dtcontainer .button:hover {
+      background-color: #48CFFB;
+      opacity: 100%;
+    }
+
+    #aus h3 {
+      text-align: justify;
+      margin: 30px;
+      padding: 0px 30px 0px 30px;
+      padding-bottom: 5px;
+    }
+
+    #footer {
+      background: linear-gradient(180deg, #002B48 0%, #34556D 100%);
+    }
+
+    .news{
+      background: linear-gradient(180deg, #000000 0%, #252525 100%);
+      display: flex;
+      flex-direction: row;
+    }
+
+    .col-sm-3{
+      height: 200px;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="banner">
+    {{#if disaster}}
+    <div class="bg-img" style="background-image: url({{disaster.image}});">
+      <a href="#"><img src="images/logo1.png" alt="logo" height="50px" width="50px"><span style="font-weight: 500; font-size: 25px;">Connected</span><span style="font-size:35px;color:#48CFFB; font-weight: 700;">Ecos</span></a>
+      <div class="container">
+        <div class="topnav">
+
+          <a href="/">Home</a>
+          <a href="/sun">Sun</a>
+          <a href="/news">News</a>
+          <a href="#">Contact</a>
+          <a href="#about">About</a>
+          <a href="#profile"><i class="glyphicon glyphicon-user"></i></a>
+        </div>
+        
+      </div>
+    </div>
+    {{/if}}
+  </section>
+
+  {{#if disaster}}
+
+  <section id="aus">
+    <center>
+      <h1>{{disaster.DisasterType}}</h1>
+    </center>
+    <center>
+      <h3>
+        {{disaster.desLong}}
+      </h3>
+    </center>
+  </section>
+
+  {{/if}}
+
+
+
+  <div class="news">
+    <div class="row">
+
+      {{#if disastersList.length}}
+
+      {{#each disastersList}}
+
+      <div class="col-sm-3" style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+        
+        <div class="contex">
+          <h4 style="align-self: center; font-weight: 700;">{{#if this.[Start Day]}}{{this.[Start Day]}}-{{/if}} {{#if
+            this.[Start Month]}}{{this.[Start Month]}}-{{/if}}
+            {{this.[Start Year]}}</h4>
+          <p>Country: {{this.Region}}, {{this.Country}}</p>
+          <p>Start: {{this.[Start Year]}}{{#if this.[Start Month]}}-{{this.[Start Month]}} {{/if}}{{#if
+            this.[Start Day]}}-{{this.[Start Day]}} {{/if}}</p>
+          <p>End: {{this.[End Year]}}{{#if this.[End Month]}}-{{this.[End Month]}} {{/if}}{{#if
+            this.[End Day]}}-{{this.[End Day]}} {{/if}}</p>
+          {{!-- <center><a href="california.html"><button class="btn">Read More</button></a></center> --}}
+        </div>
+      </div>
+    {{/each}}
+    {{/if}}
+  </div>
+  </div>
+
+  {{!-- <section id="footer">
+    <div class="container">
+      <div class="row" style="float: right; padding: 20px; ">
+        <div class="col-sm-6">
+          <div class="foot">
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Main Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Our Story</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Blog</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Contact Us</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>FAQ</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Privacy Policy</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="foot">
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Main Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Our Story</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Blog</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Contact Us</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>FAQ</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Privacy Policy</p>
+            </a>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <hr>
+    </div>
+    <hr>
+    <center>
+      <p>@ Copyright 2024 ConnectedEcos. All Rights Reserved</p>
+    </center>
+  </section> --}}
+
+  <script>
+    // Script to handle Read More button functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.col-sm-6');
+
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add('slide-in'); // Add slide-in class
+        }, index * 300); // Adjust the delay (300ms) as needed
+      });
+
+      // Footer slide-in
+      const footer = document.getElementById('footer');
+      setTimeout(() => {
+        footer.classList.add('show'); // Show footer with animation
+      }, (cards.length + 1) * 300); // Delay based on number of cards
+
+      document.querySelectorAll('.read-more').forEach(button => {
+        button.addEventListener('click', () => {
+          const description = button.nextElementSibling;
+          description.classList.toggle('expanded'); // Toggle description visibility
+        });
+      });
+    });
+
+    // Get all the "Read More" buttons
+    // Get all the "Read More" buttons
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+    // Loop through each button and add an event listener
+    readMoreButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Toggle the visibility of the detailed text
+        const card = button.closest('.card');
+        const moreInfo = card.querySelector('.card-more-info');
+
+        // Toggle the display of the details section
+        if (moreInfo.style.display === "none" || moreInfo.style.display === "") {
+          moreInfo.style.display = "block"; // Show details
+          button.textContent = "Read Less"; // Change button text
+        } else {
+          moreInfo.style.display = "none"; // Hide details
+          button.textContent = "Read More"; // Reset button text
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>

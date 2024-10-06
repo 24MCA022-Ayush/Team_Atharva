@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>ConnectedEcos | News</title>
+    <style>
+        body {font-family: oxanium;
+          background: linear-gradient(180deg, #000000 0%, #252525 100%);
+          }
+      * {box-sizing: border-box;}
+ 
+      .bg-img {
+        /* The image used */
+        background-image: url("images/banner-earth4.jpg");
+        min-height: 600px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        /* Needed to position the navbar */
+        position: relative;
+      }
+      .bg-img a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      /* Position the navbar container inside the image */
+      .container {
+        /* position: absolute; */
+        margin: 20px;
+        width: auto;
+        
+      }
+      
+      /* The navbar */
+      .topnav {
+        overflow: hidden;
+        float: right;
+      }
+      
+      /* Navbar links */
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+        border-radius: 5px;
+      }
+      #logo {
+        float: left;
+      }
+      body {
+      font-family: oxanium;
+      margin: 0;
+      padding: 0;
+      
+      color: white;
+      }
+      .dtcontainer {
+      background-color: rgb(28, 28, 28,0.7);
+      border: 1px solid #ffffff;
+      padding: 10px;
+      width: 550px;
+      margin: 50px auto;
+      text-align: center;
+      border-radius: 0% 0% 15% 15%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      gap: 0px;
+  }
+    .dtcontainer h1 {
+        font-size: 24px;
+        margin: 0;
+        padding-bottom: 10px;
+        opacity: 100%;
+    }
+    .dtcontainer .highlight {
+        font-size: 36px;
+        color: #48CFFB;
+        opacity: 100%;
+    }
+    .dtcontainer p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ccc;
+        padding: 10px 0;
+        opacity: 100%;
+    }
+
+    .dtcontainer .button {
+        background-color: #666;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        opacity: 100%;
+    }
+
+    .dtcontainer .button:hover {
+        background-color: #48CFFB;
+        opacity: 100%;
+    }
+   
+    /* #news .n1 {
+    background-image: url("images/intnews1.webp");
+    min-height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    } */
+    #news h1{
+        margin: 20px;
+    }
+    .image-container {
+    position: relative;
+      width: 1475px;
+      height: 450px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 10px;
+
+}
+
+.hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 10px;
+}
+
+.image-container:hover .hover-text {
+    opacity: 1;
+}
+
+    </style>
+</head>
+<body>
+    <section  id="banner">
+        <div class="bg-img">
+          
+          <a href="#"><img src="images/logo1.png" alt="logo" height="50px" width="50px"><span style="font-weight: 500; font-size: 25px;">Connected</span><span style="font-size:35px;color:#48CFFB; font-weight: 700;">Ecos</span></a>
+      <div class="container">
+        <div class="topnav">
+
+          <a href="/">Home</a>
+          <a href="/sun">Sun</a>
+          <a href="/news">News</a>
+          <a href="#">Contact</a>
+          <a href="#about">About</a>
+          <a href="#profile"><i class="glyphicon glyphicon-user"></i></a>
+        </div>
+          
+        </div>
+        </div>
+    </section>
+    <section id="news" ><br><br>
+        <h1>1. The Fiery Wrath: Australia's Black Summer (2019-2020)</h1>
+        <br>
+        <div class="image-container">
+          <img src="Images/Wildfire/fire-4.jpg" alt="Sample Image">
+          <div class="hover-text">
+              <p>Australia's Black Summer (2019-2020) was an unprecedented and devastating bushfire season that ravaged vast parts of the country, leaving behind destruction on an unimaginable scale. Starting in June 2019 and continuing until May 2020, these fires engulfed over 24 million hectares of land, fueled by a combination of extreme weather conditions, prolonged droughts, and record-breaking heatwaves. The fires destroyed thousands of homes, killed or displaced nearly 3 billion animals, and claimed the lives of 33 people, with an additional 450 succumbing to the effects of widespread smoke inhalation.</p>
+          </div>
+      </div>
+            
+        </div>    
+    </section><br>
+    <section id="news" ><br>
+      <h1 >2. Maria's Fury: The Unforgiving Hurricane (2017)</h1>
+      <br>
+      <div class="image-container">
+        <img src="images/hurricane/hurricane1.jpg" alt="Sample Image">
+        <div class="hover-text">
+            <p>Maria’s Fury: The Unforgiving Hurricane (2017) was a devastating Category 5 storm that struck the Caribbean in September 2017, with Puerto Rico bearing the brunt of its impact. Packing winds of up to 175 mph and causing catastrophic flooding and landslides, the hurricane left nearly 3,000 dead in Puerto Rico and caused widespread destruction across the region. Power outages lasted for months, and the island’s infrastructure, including healthcare, transportation, and communication, collapsed. The storm caused an estimated $91.6 billion in damages, sparking a prolonged humanitarian crisis and highlighting the need for improved disaster preparedness and response.</p>
+        </div>
+    </div>
+          
+      </div>    
+  </section><br>
+  <section id="news" ><br>
+    <h1 >3. The Ocean's Wrath: 2004 Indian Ocean Earthquake and Tsunam</h1>
+    <br>
+    <div class="image-container">
+      <img src="images/tsunami/tsunami2.png" alt="Sample Image">
+      <div class="hover-text">
+          <p>The Ocean’s Wrath: 2004 Indian Ocean Earthquake and Tsunami was one of the deadliest natural disasters in history. On December 26, 2004, a 9.1–9.3 magnitude earthquake struck off the coast of Sumatra, triggering massive tsunamis that devastated 14 countries, including Indonesia, Sri Lanka, India, and Thailand. Waves up to 100 feet high claimed 230,000 to 280,000 lives and displaced millions. Indonesia suffered the worst destruction. The disaster spurred a global relief effort and led to the creation of tsunami early warning systems to help prevent future tragedies.</p>
+      </div>
+  </div>
+        
+    </div>    
+</section><br>
+<section id="news" ><br>
+  <h1 >4.Drowning in Disaster: The 1931 China Floods</h1>
+  <br>
+  <div class="image-container">
+    <img src="images/flood/flood.jpg" alt="Sample Image">
+    <div class="hover-text">
+        <p>Drowning in Disaster: The 1931 China Floods refers to a catastrophic natural calamity that struck China during the summer of 1931, resulting in one of the deadliest floods in recorded history. This disaster unfolded primarily due to a combination of exceptionally heavy rainfall, melting snow from the mountains, and the overflow of major river systems, particularly the Yangtze, Huai, and Yellow Rivers. Over the course of several months, incessant rains saturated the landscape, causing rivers to swell beyond their banks. The resulting deluge transformed vast swathes of central and eastern China into a sprawling sea, devastating cities and rural areas alike. In this unprecedented disaster, an estimated 50 million people were affected, and the death toll ranged from 1 million to 4 million, highlighting the immense human tragedy that accompanied the environmental upheaval. The floods not only caused immediate destruction of homes and infrastructure but also led to widespread displacement, loss of livelihood, and severe long-term consequences for the affected communities.</p>
+    </div>
+</div>
+      
+  </div>    
+</section><br>
+<section id="news" ><br>
+  <h1 >5. The Forgotten Catastrophe: 1839 Coringa Cyclone</h1>
+  <br>
+  <div class="image-container">
+    <img src="images/cyclone/cyclone.jpg" alt="Sample Image">
+    <div class="hover-text">
+        <p>This is the text that appears when you hover over the image!</p>
+    </div>
+</div>
+      
+  </div>    
+</section><br>
+</body>
+</html>

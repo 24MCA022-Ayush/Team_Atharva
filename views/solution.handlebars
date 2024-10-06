@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>ConnectedEcos</title>
+    <style>
+      body {font-family: Arial, Helvetica, sans-serif;
+          background-color: #000;
+          scroll-behavior: smooth;
+          overflow-x: hidden;
+          }
+      * {box-sizing: border-box;}
+ 
+      .bg-img {
+        /* The image used */
+        background-image: url("images/solbanner.png");
+        min-height: 700px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        /* Needed to position the navbar */
+        position: relative;
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%); /* Start off-screen */
+                opacity: 0; /* Start invisible */
+            }
+            to {
+                transform: translateY(0); /* End at original position */
+                opacity: 1; /* Fully visible */
+            }
+        }
+      }
+      .bg-img a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      /* Position the navbar container inside the image */
+      .container {
+        /* position: absolute; */
+        margin: 20px;
+        width: auto;
+        
+      }
+      
+      /* The navbar */
+      .topnav {
+        /* overflow: hidden; */
+        float: right;
+      }
+      
+      /* Navbar links */
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      
+      .topnav a:hover {
+        font-size: 22px;
+        border-radius: 5px;
+        font-weight: 800; 
+      }
+      #logo {
+        float: left;
+      }
+      .info {
+        position: absolute;
+        bottom: 10px;
+        right: 190px;
+        color: #ddd;
+      }
+     .info2 {
+      position: inherit;
+     }
+      body {
+      font-family: oxanium;
+      margin: 0;
+      padding: 0;
+      
+      color: white;
+      }
+
+  .dtcontainer {
+      background-color: rgb(28, 28, 28,0.4);
+      border: 1px solid #ffffff;
+      padding: 10px;
+      margin: 50px;
+     
+      /* text-align: center; */
+      border-radius: 0% 0% 15% 15%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      top: 200px;
+      left: 0px;
+      gap: 0px;
+  }
+    .dtcontainer h1 {
+        font-size: 24px;
+        margin: 0;
+        padding-bottom: 10px;
+        opacity: 100%;
+    }
+    .dtcontainer .highlight {
+        font-size: 36px;
+        color: #48CFFB;
+        opacity: 100%;
+    }
+    .dtcontainer p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ccc;
+        padding: 10px 0;
+        opacity: 100%;
+    }
+
+    .dtcontainer .button {
+        background-color: #666;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        opacity: 100%;
+    }
+
+    .dtcontainer .button:hover {
+        background-color: #48CFFB;
+        opacity: 100%;
+    }
+    hr {
+      height: 3px;
+      background-color: #ddd;
+    }
+    #timeline {
+      border: 1px solid #48CFFB;
+      margin-left: 5px;
+      margin-right: 5px;
+      border-radius: 0% 0% 15% 15%;
+    }
+    .news {
+      background: linear-gradient(179.91deg, #D9D9D9 0.07%, rgba(135, 135, 135, 0.5) 47.61%, rgba(115, 115, 115, 0) 84.95%);
+      height: 400px;
+    }
+    .col-sm-3 {
+      margin: 40px;
+      height: 350px;
+      width: 250px;
+      
+    }
+    #news1{
+      margin: 10px;
+      width: 200px;
+      padding-top: 20px;
+    } 
+    .btn {
+      padding: 10px 10px 10px 10px;
+      color: #000;
+      text-align: center;
+      width: 200px;
+      align-self: center;
+      margin-top: 10px;
+    }
+    .contex {
+      padding-left: 10px;
+    }
+    #beautiful {
+      height: 800px;
+    }
+    #beautiful img {
+      height: 800px;
+    }
+    /* #ugly {
+      background: linear-gradient(271.42deg, #0A0B10 64.11%, rgba(1, 1, 1, 0) 98.96%);
+    } */
+    #ugly img {
+      height: 800px;
+      float: right;
+      width: fit-content;
+    }
+    #surf {
+      background: linear-gradient(179.91deg, #D9D9D9 0.07%, rgba(135, 135, 135, 1) 47.61%, rgba(115, 115, 115, 1) 85.95%);
+      color: #000;
+      padding-left: 30px;
+      margin: 0;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    #solution .button {
+      background: rgba(61, 92, 115, 1);
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 100%;
+    margin: 5px;
+    width: 300px;
+    padding: 10px;
+    font-size: medium;
+}
+  #footer {
+    background: linear-gradient(180deg, #002B48 0%, #34556D 100%);
+  }
+
+  .scroll-container,.news-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    cursor: grab;
+    padding: 20px;
+  }
+
+  .card {
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    user-select: none; /* Disable text selection while dragging */
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+ 
+ .highlight a {
+    font-size: 25px;
+    color: #48CFFB;
+    text-align: center;
+    padding-left:30px;
+    font-weight: 600;
+ }  
+ #wildfire {
+    margin: 50px;
+
+ }
+ /* #wildfire h1 {
+
+ } */
+ .dtcontainer2 {
+      background-color: rgb(28, 28, 28,0.6);
+      border: 1px solid #ffffff;
+      padding: 10px;
+      
+      margin: 50px auto;
+      text-align: justify;
+      border-radius: 0% 0% 15% 15%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      top: -580px;
+      left: -678px;
+      gap: 0px;
+  }
+    .dtcontainer2 h1 {
+        font-size: 24px;
+        margin: 0;
+        padding-bottom: 10px;
+        opacity: 100%;
+    }
+    .dtcontainer2 .highlight {
+        font-size: 36px;
+        color: #48CFFB;
+        opacity: 100%;
+    }
+    .dtcontainer2 p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #ccc;
+        padding: 10px 0;
+        opacity: 100%;
+    }
+
+    .dtcontainer2 .button {
+        background-color: #666;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        opacity: 100%;
+        align-items: center;
+        text-align: center;
+       margin-left: 300px;
+    }
+
+    .dtcontainer2 .button:hover {
+        background-color: #48CFFB;
+        opacity: 100%;
+    }
+    #wildsol {
+        margin: 50px;
+    }
+    .search {
+        position: absolute;
+        left: 450px;
+        top: 160px;
+        transform: translateY(-50%);
+        font-size: large;
+    }
+    .search hr {
+        position: absolute;
+        left: -30rem;
+        top: 13px;
+       
+        font-size: large;
+    }
+    </style>
+</head>
+<body>
+    <section  id="banner">
+<div class="bg-img">
+<a href="#"><img src="images/logo1.png" alt="logo" height="50px" width="50px"><span style="font-weight: 500; font-size: 25px;">Connected</span><span style="font-size:35px;color:#48CFFB; font-weight: 700;">Ecos</span></a>
+      <div class="container">
+        <div class="topnav">
+
+          <a href="/">Home</a>
+          <a href="/sun">Sun</a>
+          <a href="/news">News</a>
+          <a href="#">Contact</a>
+          <a href="#about">About</a>
+          <a href="#profile"><i class="glyphicon glyphicon-user"></i></a>
+        </div>
+  
+    <div class="info">
+      <center><div class="dtcontainer" style="height: 17rem; width: 95rem;">
+        <center><h3>SOLUTIONS FOR THE FOLLOWING PROBLEMS</h3></center><hr>
+        <center><div class="highlight"><a href="#wildfire"><span>WILDFIRE</span></a><a href="#wildfire"><span>AIR QUALITY</span></a><a href="#wildfire"><span>CLIMATE CHANGE</span></a><a href="#wildfire"><span>NATURAL DISASTER</span></a></div></center>
+    </div></center>
+
+    </div>
+  </div>
+</div>
+    </section>
+<section id="wildfire">
+    <h1><span style="color: #48CFFB; font-weight: 700;">WILDFIRE</span></h1>
+        <div class="row">
+            <div class="col-8" style="width: 80rem;">
+               
+            <div class="dtcontainer2">
+                <div class="container">
+                <h3>1.Natural Causes:</h3>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Lightning:</span> Lightning strikes, particularly from dry thunderstorms, are a major 
+                    natural cause of wildfires. These strikes can ignite dry vegetation, especially in 
+                    forested and grassland areas.</h4>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Volcano Eruption:</span> When a volcano erupts, it can produce lava flows and 
+                        pyroclastic flows that ignite surrounding vegetation, leading to wildfires.
+                </h4><br>
+                <h3>2.Human Activities:</h3>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Unattended Campfires:</span> Campfires that are not properly extinguished can 
+                        reignite and spread to nearby vegetation. This is a common cause in recreational 
+                        areas.</h4>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Discarded Cigarettes:</span>Cigarettes that are carelessly discarded can easily ignite 
+                        dry grass and leaves, especially during dry conditions</h4>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Arson:</span>: Intentional setting of fires for malicious purposes or personal gain. This is 
+                        a significant cause of wildfires in many regions.</h4>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Agricultural Practices:</span>Techniques like slash-and-burn agriculture, where land 
+                        is cleared by burning vegetation, can sometimes get out of control and cause 
+                        wildfires.</h4><br>
+                <h3>3.Environmental Factors:
+                </h3>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Drought:</span> Extended periods of dry weather can dry out vegetation, making it 
+                    highly flammable and susceptible to ignition.
+                </h4>
+                <h4><span style="font-weight: 700; color: #48CFFB;">High Winds:</span> Winds can carry embers over long distances, spreading fires 
+                    rapidly and making them harder to control.                    
+                </h4>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Heatwaves:</span> Prolonged heatwaves can dry out vegetation and increase the 
+                    likelihood of wildfires.                    
+                </h4><br>
+                
+            </div>
+        </div>
+            </div>
+        </div>
+</section>
+<br>
+<hr style="width: 250px;">
+<br>
+<section class="incident">
+    <center><h1>THE INCIDENT OCCURED IN<span style="color: #48CFFB; font-weight: 700;"> REALITY</span></h1></center>
+    
+</section>
+<section id="event1" style="background-image: url('images/event1.png'); min-height: 400px;">
+    <div class="dtcontainer2" style="float: left; margin: 50px; height: 270px;">
+      <h2 style="text-align: left; font-weight: 800; padding-left: 30px; padding-right: 30px; ">Australia Forest Fire (2019-2020)</h2>
+      <div class="highlight" style="text-align: left; padding-left: 30px;"> 33 Human <b><span style="color: #ddd;">Lives Lost..</span></b></div>
+      
+      <hr>
+      <center><p>An unprecedented and devastating bushfire season that ravaged vast parts of the country</p></center>
+      <button class="button"><a href="blacksummer.html" style="text-decoration: none; color: white;">Explore More...</a></button><br>
+  </div> 
+  </section>
+<section id="wildsol">
+    <h1>What we can <span style="color: #48CFFB; font-weight: 700;">DO IS..</span></h1><br><br><br>
+    <div class="row">
+        <div class="col-8" style="width: 80rem;">
+           
+        <div class="dtcontainer2">
+            <div class="container">
+            <h3 style="color: #48CFFB;font-weight: 600;">1.Prevention:</h3><hr>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Public Education:</span> Educating the public about fire safety, especially during highrisk periods, can significantly reduce human-caused wildfires. This includes 
+                campaigns on properly extinguishing campfires and safely discarding cigarettes.</h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Fire Bans:</span> : Implementing fire bans during dry seasons or high-risk periods can 
+                prevent accidental ignitions. These bans restrict activities like campfires, 
+                fireworks, and open burning.
+               <h4><span style="font-weight: 700; color: #48CFFB;">Controlled Burns:</span> Also known as prescribed burns, these are intentionally set 
+                fires under controlled conditions to reduce the amount of flammable vegetation. 
+                This helps prevent larger, uncontrolled wildfires.
+            </h4>
+            </h4><br>
+            <h3 style="color: #48CFFB;font-weight: 600;">2.Early Detection and Monitoring:</h3><hr>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Satellite Technology:</span> : Satellites equipped with thermal imaging can detect heat 
+                signatures from wildfires, allowing for early detection and rapid response.</h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;"> Drones:</span>Drones can be used to monitor large areas for signs of fire, providing 
+                real-time data to firefighting teams. They can also assess fire behavior and progression</h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Arson:</span>: Intentional setting of fires for malicious purposes or personal gain. This is 
+                    a significant cause of wildfires in many regions.</h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Fire Watch Towers:</span>: Strategically placed towers with personnel or automated 
+                systems can spot fires early and alert authorities.</h4><br>
+            <h3>3.Fire Management:
+            </h3><hr>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Firebreaks:</span> Creating firebreaks involves clearing strips of vegetation to act as 
+                barriers that slow or stop the spread of fire. These can be natural (rivers, roads) 
+                or man-made.
+            </h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Aerial Firefighting:</span>  Using aircraft to drop water or fire retardant on wildfires, 
+                especially in areas that are difficult to access by ground.
+                
+            </h4>
+            <br>
+            <h3>4.Climate Change Mitigation :
+            </h3><hr>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Reducing Greenhouse Gas Emissions:</span> Addressing the root causes of climate 
+                change by reducing emissions from fossil fuels, deforestation, and industrial 
+                processes. This can help mitigate the conditions that lead to more frequent and 
+                intense wildfires.
+            </h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Reforestation and Afforestation:</span>   Planting trees and restoring forests can 
+                improve ecosystem resilience, enhance carbon sequestration, and reduce the 
+                risk of large-scale fires.
+                
+            </h4>
+            <h4><span style="font-weight: 700; color: #48CFFB;">Sustainable Land Management:</span>   : Implementing practices that maintain healthy 
+                forests and grasslands, such as selective logging, controlled grazing, and 
+                maintaining biodiversity.
+                
+            </h4>
+            <br>
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+<section id="ai">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="container">
+            <h1 style="padding-left: 50px;">Ask Your Doubt Here </h1>
+                <div class="search">
+                    <button style="background-color: transparent; border: none;"><i class="fa fa-search"></i></button>
+                    <hr style="height: 1px; width: 320px;">
+                </div>
+                <input type="text" name="search" id="search" class="dtcontainer" placeholder="Enter Here..." style="width: 40rem; padding: 10px; font-size: large; height: 5rem; padding: 15px;">
+               
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="dtcontainer2" style="width:70rem;">
+                <div class="container">
+                <h3 style="color: #48CFFB;font-weight: 600;">AI Genenerated Advice</h3><hr>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Reduce Carbon Footprint:</span> Human activities, especially the burning of fossil fuels, are leading to an increase in greenhouse gases like CO2, contributing to global warming. Reduce your carbon footprint by using renewable energy sources (solar, wind), using energy-efficient appliances, and adopting cleaner transportation options like electric vehicles or public transport.
+                    .</h4><br>
+                <h4><span style="font-weight: 700; color: #48CFFB;">Promote Reforestation:</span> Deforestation for agriculture, urban development, and logging has led to biodiversity loss and increased CO2 levels. Support reforestation efforts and sustainable agriculture practices to restore ecosystems and enhance carbon sequestration.
+</h4><br>
+                   <h4><span style="font-weight: 700; color: #48CFFB;">Limit Single-Use Plastics:</span>  Plastics are non-biodegradable and have been polluting oceans, rivers, and land ecosystems, threatening marine life. Shift to reusable bags, containers, and utensils, and advocate for policies that minimize plastic production and waste.
+                </h4>
+        </div>
+    </div>
+</section>
+    </body>
+    </html>

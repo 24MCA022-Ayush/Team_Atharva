@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>ConnectedEcos</title>
+  <style>
+    #maps .map {
+      margin: 10px;
+
+    }
+
+    #maps .map img {
+      height: 200px;
+      width: 700px;
+      border: 1px solid #48CFFB;
+      border-rad
+  </style>
+</head>
+
+<body>
+  <section id="banner">
+    <div class="bg-img">
+    <a href="#"><img src="../images/logo1.png" alt="logo" height="50px" width="50px"><span style="font-weight: 500; font-size: 25px;">Connected</span><span style="font-size:35px;color:#48CFFB; font-weight: 700;">Ecos</span></a>
+      <div class="container">
+        <div class="topnav">
+
+          <a href="/">Home</a>
+          <a href="/sun">Sun</a>
+          <a href="/news">News</a>
+          <a href="#">Contact</a>
+          <a href="#about">About</a>
+          <a href="#profile"><i class="glyphicon glyphicon-user"></i></a>
+        </div>
+        <div class="info">
+          <div class="dtcontainer">
+            <h2>Let’s Dive into the immersive world of</h2>
+            <div class="highlight">INTERCONNECTED <b><span style="color: #ddd;">EARTH</span></b></div>
+            <hr>
+            <p>Earth is a complex, dynamic system where every component—land, oceans...</p>
+            <button class="button" onclick="window.location.href='/interconnected';">Explore More...</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="container">
+      <div class="tl">
+        <h2 style="font-weight: 100;">Timeline</h2>
+
+        <div class="scroll-container">
+          {{#if disasters.length}}
+          {{#each disasters}}
+          <div class="card" Year="{{this.Year}}" Affected="{{this.Affected}}"
+            Count_Of_Disasters="{{this.Count_Of_Disasters}}"
+            style="background: url('{{this.image}}'); background-size: cover; background-repeat: no-repeat;">
+            {{this.Year}}
+          </div>
+          {{/each}}
+          {{/if}}
+        </div>
+
+        <div class="dtcontainer" class="year-info" style="width: 100%;">
+          <h3 id="disaster-info">In 2000, 174226753 people were affected, with 524 major natural calamities.</h3>
+          <h4><a id="knowMoreLink" href="" style="text-decoration: none; color: white;">Know More...</a></h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <br><br><br>
+  <section id="facts">
+    <div>
+      <div class="container">
+        <h1> <span style="font-size: 60px;">Interesting news, </span>you should know</h1>
+
+        {{!-- <div class="news">
+          <!-- <div class="row"> -->
+          <div class="news-scroll-container">
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/news1.png" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Abandoned by 2080</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <center><button class="btn">Read More</button></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/news2.png" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Surface is not Safe</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <center><button class="btn">Read More</button></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/news3.png" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Forest Fire</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <center><button class="btn">Read More</button></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/news1.png" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Abandoned by 2080</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <center><button class="btn">Read More</button></center>
+              </div>
+            </div>
+
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/news3.png" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Forest Fire</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <center><button class="btn">Read More</button></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/news1.png" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Abandoned by 2080</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <center><button class="btn">Read More</button></center>
+              </div>
+            </div>
+          </div>
+        </div> --}}
+
+        <div class="news">
+          <!-- <div class="row"> -->
+          <div class="news-scroll-container">
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/fire-10.png" alt="news1" id="news1" height="145px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Blacksummer</h4>
+                <p>The Black Summer of Australia, a devastating wildfire season.</p>
+                <center><a href="/blacksummer"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/hurricane/hurricane1.jpg" alt="news1" id="news1">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Maria's Fury</h4>
+                <p>Hurricane Maria, a powerful Category 5 storm in 2017.</p>
+                <center><a href="/hurricane"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/tsunami/tsunami2.png" alt="news1" id="news1" height="140px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">The Ocean's Wrath</h4>
+                <p>One of the deadliest natural disasters in history</p>
+                <center><a href="/intersingfactearthquake"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/ex4.jpg" alt="news1" id="news1" height="140px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Drowning in Disaster</h4>
+                <p>The 1931,one of the deadliest natural disasters in history.</p>
+                <center><a href="/flood"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+
+            <!-- -------------------------------------- -->
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/ex5.png" alt="news1" id="news1" height="150px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Forgotten Catastrophe</h4>
+                <p>On November 25, 1839, a colossal cyclone struck Coringa</p>
+                <center><a href="/cyclone"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/ex6.png" alt="news1" id="news1" height="140px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">The Invisible Enemy</h4>
+                <p>The COVID-19 pandemic, caused by the SARS-CoV-2 virus</p>
+                <center><a href="/corona"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/heatwave.png" alt="news1" id="news1" height="150px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Frozen Fury</h4>
+                <p>The summer of 2003 saw a deadly heatwave</p>
+                <center><a href="/frozenfury"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/floods.png" alt="news1" id="news1" height="140px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Himalay Tsunami</h4>
+                <p>In June 2013, Indian state of Uttarakhand was hit by unprecedented flash floods</p>
+                <center><a href="/tsunami"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="../images/hurricane12.png" alt="news1" id="news1" height="150px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Typhoon Haiyan</h4>
+                <p>One of the strongest tropical cyclones ever recorded</p>
+                <center><a href="/tyhoon"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+            <div class="col-sm-3"
+              style="background: linear-gradient(180deg, #002B48 0%, #34556D 100%); border-radius: 15px;">
+              <img src="images/fire-1.png" alt="news1" id="news1" height="150px">
+              <div class="contex">
+                <h4 style="align-self: center; font-weight: 700;">Everlasting Fire</h4>
+                <p> 2020 saw one of the most destructive wildfire seasons</p>
+                <center><a href="/california"><button class="btn">Read More</button></a></center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section id="beautiful">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <img src="images/earth1.png" alt="">
+        </div>
+        <div class="col-sm-6" style="margin-top: 130px;">
+          <div class="dtcontainer" style="margin-top: 80px;">
+            <h2 style="text-align: left; font-weight: 800; padding-left: 30px;">How it was</h2>
+            <div class="highlight" style="text-align: left; padding-left: 30px;">Beautiful <b><span
+                  style="color: #ddd;">Earlier</span></b></div>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+            <a href="/beforeEarth">
+              <button class="button">Explore More...</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="ugly">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6" style="margin-top: 140px;">
+          <div class="dtcontainer" style="margin-top: 80px;">
+            <h2 style="text-align: left; font-weight: 800; padding-left: 30px;">What we</h2>
+            <div class="highlight" style="text-align: left; padding-left: 30px;">Made <b><span style="color: #ddd;">it
+                  Now...</span></b></div>
+            <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.</p>
+            <a href="/afterEarth">
+              <button class="button">Explore More...</button>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6" style="padding-left: 150px;">
+          <img src="images/ugly.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="surf">
+    <div class="container">
+      <h3>Let's Surf</h3>
+      <h1>Some of the Events</h1>
+    </div>
+  </section>
+
+  <section id="event1" style="background-image: url('images/event1.png'); min-height: 400px;">
+    <div class="dtcontainer" style="float: left; margin: 50px; height: 305px;">
+      <h2 style="text-align: left; font-weight: 800; padding-left: 30px; " id="title1"></h2>
+      <hr>
+      <p id="desc1"></p>
+      <a href="/wildfires">
+        <button class="button">Explore More...</button>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="event1" style="background-image: url('images/event2.png'); min-height: 400px;">
+    <div class="dtcontainer" style="float: right; margin: 50px; height: 305px;">
+      <h2 style="text-align: left; font-weight: 800; padding-left: 30px;" id="title2"></h2>
+      <hr>
+      <p id="desc2"></p>
+      <a href="/globalTemperature">
+        <button class="button">Explore More...</button>
+      </a>
+    </div>
+  </section>
+
+  <section id="event1" style="background-image: url('images/event3.png'); min-height: 400px;">
+    <div class="dtcontainer" style="float: left; margin: 50px; height: 305px;">
+      <h2 style="text-align: left; font-weight: 800; padding-left: 30px;" id="title3"></h2>
+      <hr>
+      <p id="desc3"></p>
+      <a href="/airQuality">
+        <button class="button">Explore More...</button>
+      </a>
+    </div>
+  </section>
+
+  <section id="event1" style="background-image: url('images/event4.png'); min-height: 400px;">
+    <div class="dtcontainer" style="float: right; margin: 50px; height: 305px;">
+      <h2 style="text-align: left; font-weight: 800; padding-left: 30px;" id="title4"></h2>
+      <hr>
+      <p id="desc4"></p>
+      <a href="/earthquake">
+        <button class="button">Explore More...</button>
+      </a>
+    </div>
+  </section>
+
+  {{!-- map --}}
+  <section id="maps" class="fade-in" style="background-image: url('images/backmap.png');">
+    <div class="container">
+      <hr style="width: 750px; height: 1rem;">
+    </div>
+    <center>
+      <div class="map">
+        <center><i class='fas fa-map-marker-alt'></i>
+          <h2>Real-Time <span style="color: #48CFFB; font-size: larger; font-weight: 800;">MAPS</span></h2>
+        </center>
+        <br>
+        <a href="/afmap"><img src="../images/Map/map1.png" alt=""></a><br><br>
+        <a href="/aqmap"><img src="../images/Map/map2.png" alt=""></a><br><br>
+        <a href="/volcano"><img src="../images/Map/map3.png" alt=""></a><br><br>
+      </div>
+    </center>
+    <div class="container">
+      <hr style="width: 645px; height: 1rem;">
+    </div>
+  </section>
+
+  <section id="solution">
+    <div class="container"><br><br><br>
+      <center>
+        <h1>What we can do is</h1>
+      </center><br><br>
+      <div class="row">
+        <div class="col-sm-6" style="padding-left: 400px;">
+          <a href="/solution"><button class="button">Remedies for air polution <span
+                style="background-color: #ccc;color: #000000; padding: 2px 4px 2px 4px; border-radius: 50px;"> >
+              </span></button></a>
+          <a href="/solution"><button class="button" style="color: #000; background-color: #ccc;">Remedies for Flood
+              <span
+                style="background: rgba(61, 92, 115, 1);color: #ccc; padding: 2px 4px 2px 4px; border-radius: 50px;"> >
+              </span> <br>
+          <p><br> Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          </button></a>
+          <a href="/solution"> <button class="button">Remedies for air polution <span
+                style="background-color: #ccc;color: #000000; padding: 2px 4px 2px 4px; border-radius: 50px;"> >
+              </span></button></a>
+          <a href="/solution"> <button class="button">Remedies for Draught <span
+                style="background-color: #ccc;color: #000000; padding: 2px 4px 2px 4px; border-radius: 50px;"> >
+              </span></button></a>
+        </div>
+        <div class="col-sm-6">
+          <button class="button" style="color: #000; background: linear-gradient(316.69deg, #70C5FF -11.19%, #31A5F5 20.41%, #3D5C73 71.73%, #70C5FF 110.15%);
+      "><img src="images/tsunami.jpg" alt="" height="210px" width="200px" style="margin: 25px;"></button>
+        </div>
+
+      </div>
+      <hr style="width: 645px; height: 1rem;">
+    </div>
+    </div>
+  </section>
+  <section id="footer" class="fade-in">
+    <div class="container">
+      <div class="row" style="float: right; padding: 20px; ">
+        <div class="col-sm-6">
+          <div class="foot">
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Main Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Sun page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>News Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Contact Us</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>About Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Privacy Policy</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="foot">
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Wildfire</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>AirQuality</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Volcano</p>
+            </a>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <hr>
+    </div>
+    <hr>
+    <center>
+      <p>@ Copyright 2024 ConnectedEcos. All Rights Reserved</p>
+    </center>
+  </section>
+  <script src="/JS/home_script.js"></script>
+</body>
+
+</html>

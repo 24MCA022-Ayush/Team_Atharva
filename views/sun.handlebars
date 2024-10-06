@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>ConnectedEcos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(180deg, #000000 0%, #252525 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-img {
+            /* The image used */
+            background-image: url("../images/sun/sunbg.png");
+            min-height: 700px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* Needed to position the navbar */
+            position: relative;
+        }
+
+        .bg-img a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        /* Position the navbar container inside the image */
+        .container {
+            /* position: absolute; */
+            margin: 20px;
+            width: auto;
+
+        }
+
+        /* The navbar */
+        .topnav {
+            overflow: hidden;
+            float: right;
+        }
+
+        /* Navbar links */
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            border-radius: 5px;
+        }
+
+        #logo {
+            float: left;
+        }
+
+        .info {
+            position: absolute;
+            bottom: 10px;
+            right: 150px;
+            color: #ddd;
+        }
+
+        body {
+            font-family: oxanium;
+            margin: 0;
+            padding: 0;
+
+            color: white;
+        }
+
+        .dtcontainer {
+            background-color: rgb(28, 28, 28, 0.6);
+            border: 1px solid #ffffff;
+            padding: 10px;
+            width: 550px;
+            margin: 50px auto;
+            text-align: center;
+            border-radius: 0% 0% 15% 15%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            top: -580px;
+            left: -678px;
+            gap: 0px;
+        }
+
+        .dtcontainer h1 {
+            font-size: 24px;
+            margin: 0;
+            padding-bottom: 10px;
+            opacity: 100%;
+        }
+
+        .dtcontainer .highlight {
+            font-size: 36px;
+            color: #48CFFB;
+            opacity: 100%;
+        }
+
+        .dtcontainer p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ccc;
+            padding: 10px 0;
+            opacity: 100%;
+        }
+
+        .dtcontainer .button {
+            background-color: #666;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            opacity: 100%;
+        }
+
+        .dtcontainer .button:hover {
+            background-color: #48CFFB;
+            opacity: 100%;
+        }
+
+        hr {
+            height: 3px;
+            background-color: #ddd;
+        }
+
+        .col-sm-8 {
+            margin: 10px;
+        }
+
+        #connection .dtcontainer2 {
+            background-color: rgb(28, 28, 28, 0.6);
+            border: 1px solid #ffffff;
+            padding: 22px;
+            text-align: center;
+            border-radius: 0% 0% 15% 15%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            gap: 0px;
+            margin: 50px;
+        }
+
+        .col-sm-4 {
+            margin: 10px;
+            width: 450px;
+        }
+
+        #connection {
+            width: 1450px;
+        }
+
+        video {
+            height: 400px;
+            width: auto;
+            /* Ensures the width adjusts automatically to maintain aspect ratio */
+        }
+
+        .video {
+            margin: 100px auto;
+        }
+
+        .dtcontainer3 {
+            background-color: rgb(28, 28, 28, 0.6);
+            border: 1px solid #48CFFB;
+            padding: 10px;
+            width: 1450px;
+            margin: 50px auto;
+            text-align: center;
+
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            top: -580px;
+            left: -678px;
+            gap: 0px;
+        }
+
+        .dtcontainer3 h1 {
+            font-size: 26px;
+            margin: 0;
+            padding-bottom: 10px;
+            opacity: 100%;
+        }
+
+        #footer {
+            background: linear-gradient(180deg, #002B48 0%, #34556D 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <section id="banner" class="fade-in">
+        <div class="bg-img">
+            <a href="#"><img src="images/logo1.png" alt="logo" height="50px" width="50px"><span style="font-weight: 500; font-size: 25px;">Connected</span><span style="font-size:35px;color:#48CFFB; font-weight: 700;">Ecos</span></a>
+            <div class="container">
+                <div class="topnav">
+
+                    <a href="/">Home</a>
+                     <a href="/sun">Sun</a>
+                    <a href="/news">News</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About</a>
+                    <a href="#"><i class="glyphicon glyphicon-user"></i></a>
+                </div>
+                <div class="info">
+                    <div class="dtcontainer">
+                        <h2>THE SUN TOUCHES</h2>
+                        <div class="highlight">EVERYTHING <b><span style="color: #ddd;"></span></b></div>
+                        <hr>
+                        <p>The Sun is the primary source of energy for Earth's climate.</p>
+                        <!--<button class="button"><a href="interconnected.html" style="padding: 0;">Explore More...</a></button>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Pop animation */
+    .pop {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .pop.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+    <!-- JavaScript to detect when elements are in view and trigger animations -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    // Apply observer to the fade-in and pop elements
+    document.querySelectorAll('.fade-in, .pop').forEach((el) => observer.observe(el));
+  </script>
+
+    <section id="connection" class="">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="dtcontainer2" style="text-align: justify;">
+                    <div class="text" style="padding: 10px 10px 10px 10px;">
+                        <h4>
+                            The connection between Earth and the Sun is fundamental to understanding how Earth's systems
+                            interact, especially in the context of climate change and other environmental processes.
+                        </h4>
+                        <h4>The Sun is the primary source of energy for Earth's climate. Solar radiation drives
+                            atmospheric circulation, ocean currents, and the water cycle.</h4>
+
+                        <h4>Changes in solar energy output or how Earth absorbs and reflects this energy can directly
+                            influence global temperatures and weather patterns.</h4>
+
+                        <h4>The Earth’s atmosphere absorbs and scatters solar radiation, influencing air temperature and
+                            weather. Greenhouse gases trap heat, which is crucial for maintaining Earth's habitability
+                            but
+                            also contributes to global warming when concentrations increase.</h4>
+                        <h4>NASA’s Earth Observing System satellites (like AIRS, OCO-2) measure atmospheric carbon
+                            dioxide levels and other greenhouse gases. These datasets can be used to visualize the
+                            increase
+                            in trapped heat and its effects on different Earth systems.</h4>
+
+                        <h4>Solar flares and coronal mass ejections from the Sun can affect Earth’s magnetic field,
+                            potentially triggering geomagnetic storms. These storms can disrupt power grids, satellite
+                            communications, and even lead to enhanced auroras.</h4>
+
+                        <h4>Solar radiation affects plant growth through photosynthesis, impacting agriculture and food
+                            security. Changes in weather patterns due to solar variations can lead to droughts or
+                            floods,
+                            affecting water resources and crop yields.</h4>
+
+                        <h4>Solar energy is a clean, renewable resource that can reduce reliance on fossil fuels, thus
+                            lowering greenhouse gas emissions and improving air quality. However, the Sun’s role in
+                            weather
+                            patterns also influences air pollution levels, as certain weather conditions can trap
+                            pollutants
+                            in the atmosphere.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="video" style="text-align: justify;">
+                    <center>
+                        <video autoplay muted loop>
+                            <source src="../images/sun/sun1.webm" type="video/webm">
+                            <source src="../images/sun/sun2.webm" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+
+                    </center>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Pop animation */
+    .pop {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+    .pop.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+    <!-- JavaScript to detect when elements are in view and trigger animations -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    // Apply observer to the fade-in and pop elements
+    document.querySelectorAll('.fade-in, .pop').forEach((el) => observer.observe(el));
+  </script>
+
+    <section class="dtcontainer3">
+        <center>
+            <h1>Global Solar Atlas Map</h1>
+        </center>
+        <center><iframe src="https://eyes.nasa.gov/apps/earth/#/vital-signs/air-temperature/airs-infrared-surface-3day"
+                width="800" height="500" allowfullscreen style="border: 0;"></center>
+        </iframe>
+    </section>
+    <br>
+    <section class="news">
+        <center>
+            <h2 style="text-decoration: underline;">Strong Solar Flare Erupts on October 3, 2024</h2><br>
+            <iframe width="1260" height="515"
+                src="https://www.youtube.com/embed/1ZRhwhEGaBo?autoplay=1&mute=1&si=1yTA7JV487RDKmBe"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen style="border:2px solid white;">
+
+            </iframe>
+
+            <h5 style="padding-left: 50px;padding-right: 50px;">On October 3rd, 2024, the sun released a record-breaking
+                X9.05 solar flare, the most powerful in
+                this solar cycle! This massive solar eruption caused shortwave radio blackouts over Europe and
+                Africa and could trigger stunning aurora displays as a coronal mass ejection (CME) heads towards
+                Earth. I</h5>
+            <br>
+            <hr style="width: 250px;">
+            <br>
+            <h2 style="text-decoration: underline;">One Year of Terra/CERES Data (Reflected Solar Radiation) Daily Data
+            </h2>
+            <br>
+            <video autoplay muted controls style="border:2px solid white;">
+                <source src="../images/sun/sun1.webm" type="video/webm">
+                <source src="../images/sun/sun2.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h5 style="padding-left: 50px;padding-right: 50px;">This animation displays a little over one year of Terra/CERES data (March 1, 2000 to May 25, 2001) at
+                one day resolution. The data are 2.5 degree resolution. The band is reflected solar radiation (often
+                referred to as 'shortwave' in the literature). Bright areas correspond to cloud tops or snowcover.</h5><br>
+        </center>
+    </section>
+    <section id="footer" class="fade-in">
+    <div class="container">
+      <div class="row" style="float: right; padding: 20px; ">
+        <div class="col-sm-6">
+          <div class="foot">
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Main Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Sun page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>News Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Contact Us</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>About Page</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Privacy Policy</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="foot">
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Wildfire</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>AirQuality</p>
+            </a>
+            <a href="#" style=" text-decoration: none; color: #ccc;">
+              <p>Volcano</p>
+            </a>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <hr>
+    </div>
+    <hr>
+    <center>
+      <p>@ Copyright 2024 ConnectedEcos. All Rights Reserved</p>
+    </center>
+  </section>
+</body>
+
+</html>
